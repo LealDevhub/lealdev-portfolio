@@ -1,0 +1,126 @@
+#intro {
+    display: grid;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
+
+    & h1 {
+        font-size: 5rem;
+        color: white;
+    }
+
+    & h3{
+        color: white;
+    }
+
+    & span {
+        background: linear-gradient(45deg, rgb(64, 25, 182) 35% , rgb(64, 25, 182) 35%,rgba(0,212,255,1) 100%, rgb(64, 25, 182));
+        background-size: 400% 100%;
+        animation: degrade 10s linear infinite reverse;
+    
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
+        font-weight: bold;
+    }
+
+    & .tag {
+
+        & > img {
+        width: 18.5rem;
+        border-radius: 50%;
+        }
+
+        justify-self: right;
+    }
+
+    & .techs {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-block: 2rem;
+
+        & span {
+            font-weight: 800;
+            font-size: 1rem;
+        }
+    }
+
+}
+
+
+@keyframes degrade {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+
+
+@media (max-width: 1056px) {
+    #intro {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media (max-width: 947px) {
+    #intro {
+        h1 {
+            font-size: 2.75rem;
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    #intro {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        text-align: center;
+
+        & .techs {
+
+            width: 100%;
+            & span {
+
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 947px) {
+    #intro {
+        h1 {
+            font-size: 2rem;
+        }
+
+        
+    }
+}
+
+@media (max-width: 450px) {
+    #intro {
+        & .techs {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        & .tag {
+            & > img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+}
