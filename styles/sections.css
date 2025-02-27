@@ -124,3 +124,15 @@
         }
     }
 }
+
+@media (max-width: 376px) {
+    #intro {
+        & h1 {
+            font-size: 1rem;
+        }
+
+        & h3 {
+            font-size: .6rem;
+        }
+    }
+}
