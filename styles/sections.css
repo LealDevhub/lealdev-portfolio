@@ -9,11 +9,7 @@
 
         & h1 {
             font-size: 5rem;
-            color: white;
-        }
 
-        & h3{
-            color: white;
         }
 
         & span {
@@ -69,6 +65,22 @@
 
 #projects {
     background-color: black;
+
+    display: flex;
+    align-items: initial;
+    justify-content: center;
+
+    & .content {
+        margin-block: 4rem;
+        text-align: center;
+
+        & header {
+            p {
+                color: rgba(0,212,255,1);
+            }
+        }
+    }
+    
 }
 
 
@@ -86,11 +98,14 @@
     #intro {
         & .content {
             h1 {
-                font-size: 2.75rem;
+                font-size: 2rem;
             }
         }
+
+        
     }
 }
+
 
 @media(max-width: 800px) {
     #intro {
@@ -113,41 +128,20 @@
     }
 }
 
-@media (max-width: 947px) {
-    #intro {
-        & .content {
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        
-    }
-}
-
-@media (max-width: 450px) {
+@media (max-width: 680px) {
     #intro {
         & .content {
             & .techs {
                 flex-direction: column;
                 gap: 10px;
             }
-    
+
             & .tag {
                 & > img {
-                    width: 100%;
-                    border-radius: 50%;
+                    width: 15rem;
                 }
             }
 
-        }
-        
-    }
-}
-
-@media (max-width: 376px) {
-    #intro {
-        & .content  {
             & h1 {
                 font-size: 1rem;
             }
@@ -155,6 +149,15 @@
             & h3 {
                 font-size: .6rem;
             }
+        }
+    }
+}
+
+
+@media (max-width: 376px) {
+    #intro {
+        & .content  {
+           
         }
     }
 }
