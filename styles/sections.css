@@ -1,6 +1,7 @@
 @import url(keyframe.css);
 
 #intro {
+    height: 100vh;
     & .content {
         display: grid;
         align-items: center;
@@ -64,6 +65,7 @@
 }
 
 #projects {
+    height: 100%;
     background-color: black;
 
     display: flex;
@@ -73,10 +75,40 @@
     & .content {
         margin-block: 4rem;
         text-align: center;
+        display: grid;
+        gap: 56px;
 
         & header {
             p {
                 color: rgba(0,212,255,1);
+            }
+        }
+
+        .projects {
+            width: 80%;
+
+            margin-inline: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .proj {
+            width: 20.625rem;
+            height: 17.5rem;
+
+            & img {
+                width: 100%;
+                border-radius: 1rem;
+            }
+            & p {
+                max-width: 100%; /* Tamanho */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         }
     }
