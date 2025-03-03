@@ -1,6 +1,6 @@
 ScrollReveal({
     origin: 'top',
-    distance: '30px',
+    distance: '40px',
     duration: 650,
     reset: true
 }).reveal(
@@ -8,11 +8,13 @@ ScrollReveal({
 #intro .content,
 #intro .content .info,
 #intro .content .tag,
+#intro .content .description,
 #intro .content .techs,
 #intro .content .techs .tech,
 #projects .content,
 #projects .content header,
 #intro .content .projects,
 #intro .content .projects .proj
-`
+`,
+{ interval: 100 }
 )
