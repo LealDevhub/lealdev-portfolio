@@ -86,8 +86,8 @@
 
 
         & .line-points {
-            width: 1000px;
-            margin: 100px auto;
+            width: 62.5rem;
+            margin: 6.25rem auto;
             position: relative;
 
             &::after {
@@ -98,7 +98,7 @@
                 width: 5px;
                 height: 0%;
                 background: linear-gradient(45deg, rgb(64, 25, 182) 35% , rgb(64, 25, 182) 35%,rgba(0,212,255,1) 100%, rgb(64, 25, 182));
-                border-radius: 50px;
+                border-radius: 3.125rem;
                 animation: LineAnimated 5s linear forwards;
             }
             
@@ -107,7 +107,7 @@
         & .point {
             width: 50%;
             position: relative;
-            padding: 10px 20px;
+            padding: 0.625rem 1.25rem;
             opacity: 0;
 
             &:nth-child(even) {
@@ -228,6 +228,32 @@
             & .description {
                 & p {
                     max-width: 100%;
+                }
+            }
+        }
+    }
+
+    #timeline {
+        & .content {
+            & .line-points {
+                width: 100%;
+
+                &::after {
+                    right: none;
+                    left: 0;
+                }
+                
+                & .point {
+                    right: 0;
+                    width: 100%;
+
+                    &::before {
+                        left: -7px;
+                    }
+                }
+
+                & .text-content {
+                    width: 100%;
                 }
             }
         }
