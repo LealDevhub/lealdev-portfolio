@@ -47,5 +47,5 @@ header > p {
     height: 2px;
     width: 100%;
 
-    background: linear-gradient(45deg,rgba(0,212,255,1) 100%, rgb(64, 25, 182),  rgb(64, 25, 182) 35% , rgb(64, 25, 182) 35%);
+    background: linear-gradient(45deg,#00d4ff 35%, #4019b6);
 }
