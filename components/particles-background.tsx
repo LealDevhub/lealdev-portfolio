@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { ISourceOptions } from "@tsparticles/engine";
+import type { ISourceOptions, Engine } from "@tsparticles/engine";
 
 export function ParticlesBackground() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
+    initParticlesEngine(async (engine: Engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
@@ -19,12 +19,11 @@ export function ParticlesBackground() {
   const options: ISourceOptions = useMemo(
     () => ({
       fullScreen: {
-        enable: true,
-        zIndex: -1,
+        enable: false,
       },
       background: {
         color: {
-          value: "#000000",
+          value: "transparent",
         },
       },
       fpsLimit: 120,
@@ -95,5 +94,9 @@ export function ParticlesBackground() {
 
   if (!init) return null;
 
-  return <Particles id="tsparticles" options={options} />;
+  return (
+    <div className="fixed inset-0 -z-10">
+      <Particles id="tsparticles" options={options} className="w-full h-full" />
+    </div>
+  );
 }

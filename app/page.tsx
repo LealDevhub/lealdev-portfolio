@@ -5,9 +5,9 @@ import { ProjectsSection } from "@/components/projects-section";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-background text-foreground">
       <ParticlesBackground />
-      <main className="relative z-10">
+      <main className="relative">
         <IntroSection />
         
         {/* Divider */}
@@ -16,6 +16,6 @@ export default function Home() {
         <TimelineSection />
         <ProjectsSection />
       </main>
-    </>
+    </div>
   );
 }
