@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { ISourceOptions, Engine } from "@tsparticles/engine";
@@ -26,44 +26,39 @@ export function ParticlesBackground() {
           value: "transparent",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 60,
       interactivity: {
         events: {
           onHover: {
             enable: true,
-            mode: "repulse",
-          },
-          onClick: {
-            enable: true,
-            mode: "push",
+            mode: "grab",
           },
         },
         modes: {
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-          push: {
-            quantity: 4,
+          grab: {
+            distance: 140,
+            links: {
+              opacity: 0.5,
+            },
           },
         },
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: ["#7c3aed", "#00d4ff"],
         },
         links: {
-          color: "#ffffff",
+          color: "#7c3aed",
           distance: 150,
           enable: true,
-          opacity: 0.4,
+          opacity: 0.15,
           width: 1,
         },
         move: {
           enable: true,
-          speed: 6,
+          speed: 1,
           direction: "none",
-          random: false,
+          random: true,
           straight: false,
           outModes: {
             default: "out",
@@ -72,19 +67,19 @@ export function ParticlesBackground() {
         number: {
           density: {
             enable: true,
-            width: 800,
-            height: 800,
+            width: 1200,
+            height: 1200,
           },
-          value: 200,
+          value: 50,
         },
         opacity: {
-          value: 0.5,
+          value: { min: 0.3, max: 0.6 },
         },
         shape: {
-          type: "triangle",
+          type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 2 },
         },
       },
       detectRetina: true,
@@ -95,7 +90,7 @@ export function ParticlesBackground() {
   if (!init) return null;
 
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-0 -z-10 pointer-events-none">
       <Particles id="tsparticles" options={options} className="w-full h-full" />
     </div>
   );

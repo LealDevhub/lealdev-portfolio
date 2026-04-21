@@ -13,6 +13,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
     "framer-motion": "^12",
+    "lucide-react": "^1.8.0",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19"

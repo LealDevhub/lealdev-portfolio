@@ -1,17 +1,28 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const inter = Inter({ 
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-sans",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Fabricio P. Leal Portfolio | Homepage",
-  description:
-    "Portfólio de Fabricio Leal - Desenvolvedor Full-Stack apaixonado por Tecnologia e Desenvolvimento Web",
+  title: "LealDev | Desenvolvedor Full Stack",
+  description: "Transformo ideias em experiencias digitais incriveis. Desenvolvedor Full Stack especializado em criar solucoes web modernas e eficientes.",
+  keywords: ["desenvolvedor", "full stack", "web", "react", "next.js", "portfolio"],
+  authors: [{ name: "Fabricio Leal" }],
+  openGraph: {
+    title: "LealDev | Desenvolvedor Full Stack",
+    description: "Transformo ideias em experiencias digitais incriveis.",
+    type: "website",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -21,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="bg-background">
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         {children}
       </body>
     </html>
