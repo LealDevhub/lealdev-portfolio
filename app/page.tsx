@@ -337,7 +337,10 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary mb-1">Bacharelado em Tecnologia da Informacao</h4>
+                    <div className="flex items-center gap-3 mb-1">
+                      <h4 className="font-bold text-primary">Bacharelado em Tecnologia da Informacao</h4>
+                      <span className="px-2 py-0.5 bg-accent/10 text-accent text-xs font-medium rounded-full">2025</span>
+                    </div>
                     <p className="text-accent font-medium text-sm mb-2">Universidade Virtual do Estado de Sao Paulo (UNIVESP)</p>
                     <p className="text-sm text-muted leading-relaxed">
                       Formacao completa em TI com enfase em desenvolvimento de software, 
