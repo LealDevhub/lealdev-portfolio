@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 w-full z-50 glass-strong shadow-sm">
         <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="text-lg font-semibold gradient-text">leal.dev</span>
           <div className="flex items-center gap-6">
@@ -72,14 +72,14 @@ export default function Home() {
             <div className="flex gap-4">
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-medium hover:opacity-90 transition-all shadow-lg shadow-primary/25"
               >
                 Entrar em contato
                 <ArrowUpRight className="w-4 h-4" />
               </a>
               <a
                 href="#projetos"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-lg font-medium hover:bg-card transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 glass text-foreground rounded-xl font-medium hover:shadow-md transition-all"
               >
                 Ver projetos
               </a>
@@ -118,7 +118,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group block bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all"
+                className="group block glass rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
               >
                 <div className="aspect-video relative overflow-hidden bg-background">
                   <Image
@@ -136,7 +136,7 @@ export default function Home() {
                   <p className="text-sm text-muted mb-3">{project.description}</p>
                   <div className="flex gap-2">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs px-2 py-1 bg-background rounded-md text-muted">
+                      <span key={tag} className="text-xs px-2.5 py-1 bg-white/50 rounded-lg text-muted font-medium">
                         {tag}
                       </span>
                     ))}
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="sobre" className="py-24 px-6 bg-border/30">
+      <section id="sobre" className="py-24 px-6 glass-subtle">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,7 +169,7 @@ export default function Home() {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-sm bg-background border border-border rounded-lg"
+                    className="px-3 py-1.5 text-sm glass rounded-lg font-medium"
                   >
                     {skill}
                   </span>
@@ -177,7 +177,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square max-w-xs mx-auto rounded-2xl overflow-hidden border border-border">
+              <div className="aspect-square max-w-xs mx-auto rounded-2xl overflow-hidden glass shadow-lg">
                 <Image
                   src="/assets/having-fun.png"
                   alt="Fabricio Leal"
@@ -221,7 +221,7 @@ export default function Home() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 glass rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               />
               <input
                 type="email"
@@ -229,7 +229,7 @@ export default function Home() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
+                className="w-full px-4 py-3 glass rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               />
             </div>
             <textarea
@@ -238,25 +238,25 @@ export default function Home() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               required
-              className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
+              className="w-full px-4 py-3 glass rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all resize-none"
             />
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-medium hover:opacity-90 transition-all shadow-lg shadow-primary/25"
             >
               Enviar mensagem
               <Send className="w-4 h-4" />
             </button>
           </motion.form>
 
-          <div className="mt-8 pt-8 border-t border-border">
+          <div className="mt-8 pt-8 border-t border-white/30">
             <p className="text-center text-muted text-sm mb-4">Ou me encontre em</p>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-3">
               <a
                 href="https://wa.me/5511948765742"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
+                className="p-3 glass rounded-xl hover:shadow-md hover:scale-105 transition-all duration-200"
                 aria-label="WhatsApp"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -267,7 +267,7 @@ export default function Home() {
                 href="https://github.com/LealDevhub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
+                className="p-3 glass rounded-xl hover:shadow-md hover:scale-105 transition-all duration-200"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -278,7 +278,7 @@ export default function Home() {
                 href="https://linkedin.com/in/fabricio-leal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
+                className="p-3 glass rounded-xl hover:shadow-md hover:scale-105 transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -287,7 +287,7 @@ export default function Home() {
               </a>
               <a
                 href="mailto:fabricio.pereira.leal@gmail.com"
-                className="p-3 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
+                className="p-3 glass rounded-xl hover:shadow-md hover:scale-105 transition-all duration-200"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -298,7 +298,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border">
+      <footer className="py-8 px-6 glass-subtle">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-sm text-muted">
             {new Date().getFullYear()} Fabricio Leal. Feito com Next.js
