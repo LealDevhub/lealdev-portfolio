@@ -329,7 +329,7 @@ export default function Home() {
                 <div className="flex items-start gap-4">
                   <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
                     <Image
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UNIVESP_logo.png/220px-UNIVESP_logo.png"
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HiW9Ae58YLKMJKR6PPrjtcxT1esyIO.png"
                       alt="UNIVESP Logo"
                       width={48}
                       height={48}
