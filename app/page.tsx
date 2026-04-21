@@ -7,22 +7,25 @@ import { useState, useRef } from "react";
 
 const projects = [
   {
-    title: "Clima App",
-    description: "Aplicacao de previsao do tempo com interface moderna",
-    image: "/assets/clima-app.png",
-    tags: ["React", "API", "UI/UX"],
+    title: "Marchiori Elegance",
+    description: "Loja virtual elegante de gravatas e acessorios masculinos, com foco em conversao via WhatsApp. Design sofisticado que transmite luxo e exclusividade para momentos especiais.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/marchiori-elegance-FUnxKp4qnbbBgbcVUEiMvbF0qMFovR.png",
+    tags: ["Next.js", "E-commerce", "WhatsApp API"],
+    link: "https://marchiorielegance.com/",
   },
   {
-    title: "Sistema de Vendas",
-    description: "Gerenciamento completo de vendas e estoque",
-    image: "/assets/gerenciamento-de-vendas.png",
-    tags: ["Node.js", "SQL", "Dashboard"],
+    title: "Price Hawk",
+    description: "Sistema inteligente de monitoramento de precos no eBay. Receba alertas por email quando produtos atingirem o valor desejado. Ideal para encontrar as melhores ofertas.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/price-hawk-YI9MDYIZ3hJrzpCX93izQXvOjRIiIK.png",
+    tags: ["Next.js", "API Integration", "Email Alerts"],
+    link: "https://v0-alerta-de-preco-e-bay.vercel.app/",
   },
   {
     title: "Controle de Emprestimos",
-    description: "Sistema de gestao para chromebooks",
+    description: "Sistema completo de gestao para emprestimo de chromebooks em ambiente educacional. Controle de inventario, historico e relatorios.",
     image: "/assets/emprestimo-de-chromebooks-satelite.png",
-    tags: ["Full Stack", "CRUD"],
+    tags: ["Full Stack", "CRUD", "Dashboard"],
+    link: "#",
   },
 ];
 
@@ -255,13 +258,16 @@ export default function Home() {
                       </div>
                       <h3 className="text-2xl font-bold mb-3 text-primary">{project.title}</h3>
                       <p className="text-muted mb-6">{project.description}</p>
-                      <motion.button
+                      <motion.a
+                        href={project.link}
+                        target={project.link !== "#" ? "_blank" : undefined}
+                        rel={project.link !== "#" ? "noopener noreferrer" : undefined}
                         whileHover={{ x: 5 }}
                         className="inline-flex items-center gap-2 text-accent font-medium group/btn"
                       >
                         Ver projeto
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-                      </motion.button>
+                      </motion.a>
                     </div>
                     <div className={`order-1 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                       <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
@@ -303,7 +309,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-lg text-muted leading-relaxed mb-8">
+              <p className="text-lg text-muted leading-relaxed mb-6">
                 Sou um desenvolvedor que acredita que o codigo bem escrito e uma forma de arte. 
                 Combino habilidades tecnicas com um olhar atento ao design para criar 
                 solucoes que nao apenas funcionam, mas encantam.
@@ -312,6 +318,35 @@ export default function Home() {
                 Minha missao e transformar ideias em realidade digital, 
                 sempre focando na experiencia do usuario e na qualidade do codigo.
               </p>
+              
+              {/* Education */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="glass rounded-2xl p-6 mb-8"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+                    <Image
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UNIVESP_logo.png/220px-UNIVESP_logo.png"
+                      alt="UNIVESP Logo"
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary mb-1">Bacharelado em Tecnologia da Informacao</h4>
+                    <p className="text-accent font-medium text-sm mb-2">Universidade Virtual do Estado de Sao Paulo (UNIVESP)</p>
+                    <p className="text-sm text-muted leading-relaxed">
+                      Formacao completa em TI com enfase em desenvolvimento de software, 
+                      banco de dados, redes de computadores, seguranca da informacao e 
+                      gestao de projetos de tecnologia.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
               
               {/* Skills with animated bars */}
               <div className="space-y-4">
