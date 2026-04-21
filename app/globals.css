@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #ffffff;
-  --color-primary: #7c3aed;
-  --color-primary-light: #00d4ff;
-  --color-muted: #a1a1a1;
-  --color-muted-foreground: #737373;
-  --color-card: #111111;
-  --color-card-hover: #1a1a1a;
-  --color-border: #262626;
+  --color-background: #09090b;
+  --color-foreground: #fafafa;
+  --color-primary: #8b5cf6;
+  --color-accent: #06b6d4;
+  --color-muted: #71717a;
+  --color-card: #18181b;
+  --color-border: #27272a;
   --font-sans: "Inter", sans-serif;
 }
 
@@ -22,69 +20,28 @@ body {
   color: var(--color-foreground);
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Gradient text */
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-light) 100%
-  );
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Gradient border */
-.gradient-border {
-  position: relative;
+::selection {
+  background: rgba(139, 92, 246, 0.3);
 }
 
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-light) 100%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* Glow effect */
-.glow {
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3),
-    0 0 40px rgba(0, 212, 255, 0.1);
-}
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-background);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted-foreground);
-}
-
-/* Selection */
-::selection {
-  background: rgba(124, 58, 237, 0.3);
-  color: var(--color-foreground);
+  border-radius: 3px;
 }
