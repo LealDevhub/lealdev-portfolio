@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #09090b;
-  --color-foreground: #fafafa;
-  --color-primary: #8b5cf6;
-  --color-accent: #06b6d4;
+  --color-background: #fafafa;
+  --color-foreground: #18181b;
+  --color-primary: #7c3aed;
+  --color-accent: #0891b2;
   --color-muted: #71717a;
-  --color-card: #18181b;
-  --color-border: #27272a;
+  --color-card: #ffffff;
+  --color-border: #e4e4e7;
   --font-sans: "Inter", sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
+  background: rgba(124, 58, 237, 0.2);
 }
 
 ::-webkit-scrollbar {

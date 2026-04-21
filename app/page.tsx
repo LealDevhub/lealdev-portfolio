@@ -72,7 +72,7 @@ export default function Home() {
             <div className="flex gap-4">
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
               >
                 Entrar em contato
                 <ArrowUpRight className="w-4 h-4" />
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="sobre" className="py-24 px-6 bg-card/50">
+      <section id="sobre" className="py-24 px-6 bg-border/30">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,7 +242,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Enviar mensagem
               <Send className="w-4 h-4" />
