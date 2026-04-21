@@ -12,10 +12,16 @@ export const metadata: Metadata = {
   description: "Transformo ideias em experiencias digitais incriveis. Desenvolvedor Full Stack especializado em criar solucoes web modernas e eficientes.",
   keywords: ["desenvolvedor", "full stack", "web", "react", "next.js", "portfolio"],
   authors: [{ name: "Fabricio Leal" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "LealDev | Desenvolvedor Full Stack",
     description: "Transformo ideias em experiencias digitais incriveis.",
     type: "website",
+    images: ["/icon.svg"],
   },
 };
 
